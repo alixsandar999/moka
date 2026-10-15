@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">MOKA Warehouse eagle circuit logo</title>
+  <rect x="8" y="8" width="496" height="496" rx="92" fill="#fff"/>
+  <path d="m284 60 84-22-46 60 109-30-65 60 102 22-102 7 52 41-79-8-29 34 47 28 57 63-62-30 27 72-56-45 12 114-52-74-43 123-14-100-57 67 17-90-48 48 19-78-50 37 38-73-54 27 36-64-84 6-23-39 9-43 41-37 58-25 69-20 57-14z" fill="#111"/>
+  <path d="m40 219 50-38 35 13-27 20-39 6z" fill="#e4002b"/>
+  <path d="m135 174 44-21 31 5-33 21-33 5z" fill="#fff"/>
+  <circle cx="137" cy="184" r="15" fill="#e4002b"/>
+  <circle cx="137" cy="184" r="6" fill="#fff"/>
+  <g fill="none" stroke="#e4002b" stroke-linecap="round" stroke-linejoin="round" stroke-width="13">
+    <path d="m259 252 28 26v65l-76 77"/>
+    <path d="m301 229 49 49v52l-61 61v63"/>
+    <path d="m228 311v45l-94 94"/>
+    <path d="m350 301 39 40"/>
+  </g>
+  <g fill="#fff" stroke="#e4002b" stroke-width="12">
+    <circle cx="287" cy="278" r="19"/>
+    <circle cx="350" cy="278" r="17"/>
+    <circle cx="211" cy="420" r="17"/>
+    <circle cx="289" cy="391" r="17"/>
+  </g>
+</svg>
