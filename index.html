@@ -115,7 +115,11 @@
     .final-cta .button { flex: 0 0 auto; background: #f5f5f5; color: #1b1b1b; }
     .final-cta .button:hover { background: #fff; }
     .download-section { padding-block: clamp(55px, 8vw, 88px); background: linear-gradient(180deg,#191919,#141414); }
+    .download-options { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); align-items: stretch; gap: 18px; }
     .download-card { display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: center; gap: 26px; padding: clamp(22px,4vw,38px); border: 1px solid #56303a; background: radial-gradient(ellipse at 100% 0,#5d112530,transparent 55%),var(--panel); box-shadow: 0 22px 60px #0003; }
+    .download-card.is-current { border-color: #a92740; }
+    .download-card.is-previous { border-color: #414141; background: var(--panel); }
+    .download-options > .download-card { align-content: start; }
     .download-card h3 { margin: 0 0 10px; font-size: clamp(19px,3vw,25px); }
     .download-card-copy > p { max-width: 680px; margin: 0; color: #bbb; font-size: 14px; line-height: 1.85; }
     .download-card-icon { width: 47px; height: 47px; display: grid; place-items: center; margin-bottom: 18px; border: 1px solid #853047; background: #e4002b1d; color: #ff7187; font-size: 23px; }
@@ -154,6 +158,7 @@
       .feature { min-height: 0; }
       .download-card { grid-template-columns: 1fr; }
       .download-card-actions { min-width: 0; }
+      .download-options { grid-template-columns: 1fr; }
       .final-cta-inner { align-items: stretch; flex-direction: column; }
       .final-cta .button { width: 100%; }
       .preview-body { padding: 13px; }
@@ -171,7 +176,7 @@
       "name": "MOKA Warehouse",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Windows 10, Windows 11",
-      "softwareVersion": "2026.11.3",
+      "softwareVersion": "2026.11.4",
       "inLanguage": "ar-DZ"
     }
   </script>
@@ -190,7 +195,7 @@
         <a href="#التنزيل">التنزيل</a>
         <a href="#الأسئلة">الأسئلة الشائعة</a>
       </div>
-      <a class="button button-small" href="#download" data-download-zip>تنزيل البرنامج <span aria-hidden="true">↓</span></a>
+      <a class="button button-small" href="#download" data-download-zip="v2">تنزيل النسخة الثانية <span aria-hidden="true">↓</span></a>
     </nav>
   </header>
 
@@ -202,9 +207,9 @@
           <h1>عملك اليومي،<br><em>أوضح وأسهل.</em></h1>
           <p class="hero-copy">أدر المبيعات والمشتريات والمخزون والعملاء من تطبيق واحد على Windows. سجّل الفواتير، تابع المستحقات، وراجع الأرقام من لوحة تحكم مرتبة.</p>
           <div class="hero-actions">
-            <a class="button" href="#download" data-download-zip>
+            <a class="button" href="#download" data-download-zip="v2">
               <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5M5 20h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              تنزيل برنامج Windows
+              تنزيل النسخة الثانية
             </a>
             <a class="button button-outline" href="#المميزات">اكتشف المميزات <span aria-hidden="true">←</span></a>
           </div>
@@ -312,20 +317,34 @@
           <h2>حسابات تجارتك، في تطبيق واحد</h2>
           <p>برنامج محاسبة وإدارة مخزون واضح وسهل الاستخدام، مصمم لمساعدة الشركات والتجار على تنظيم الفواتير والمبيعات والمشتريات.</p>
         </div>
-        <div class="download-card">
-          <div class="download-card-copy">
-            <span class="download-card-icon" aria-hidden="true">⇩</span>
-            <h3>MOKA Warehouse لنظام Windows</h3>
-            <p>نزّل الحزمة المضغوطة، استخرج ملف التثبيت، ثم اتبع الخطوات لإنشاء حسابك المحلي والبدء دون أصناف تجريبية.</p>
-            <div class="download-details"><span>Windows 10/11 · 64-bit</span><span data-version="2026.11.3">الإصدار 2026.11.3</span><span>ملف ZIP</span></div>
-          </div>
-          <div class="download-card-actions">
-            <a class="button" href="#download" data-download-zip>تحميل ملف البرنامج ZIP <span aria-hidden="true">↓</span></a>
-            <a class="download-direct" href="#download" data-download-zip>تحميل ملف ZIP</a>
-          </div>
-          <p id="downloadStatus" class="download-status" role="status" aria-live="polite"></p>
-          <p class="download-extract-note">بعد استخراج ZIP، شغّل <bdi>MOKA-Warehouse-Setup.exe</bdi>. قد يعرض Windows تحذيراً لأن المثبّت غير موقّع بشهادة رقمية؛ لا تشغّل الملف إلا بعد التأكد من تنزيله من موقعك الرسمي.</p>
+        <div class="download-options">
+          <article class="download-card is-current">
+            <div class="download-card-copy">
+              <span class="download-card-icon" aria-hidden="true">٢</span>
+              <h3>النسخة الثانية المحسّنة</h3>
+              <p>أحدث إصدار من MOKA Warehouse، مع استعادة الحساب عند نسيان كلمة المرور، وتقرير المبيعات اليومية وتحسينات شاشة التسجيل والفواتير.</p>
+              <div class="download-details"><span>Windows 10/11 · 64-bit</span><span data-version="2026.11.4">الإصدار الثاني · 2026.11.4</span><span>ملف ZIP</span></div>
+            </div>
+            <div class="download-card-actions">
+              <a class="button" href="#download" data-download-zip="v2">تحميل النسخة الثانية ZIP <span aria-hidden="true">↓</span></a>
+              <a class="download-direct" href="#download" data-download-zip="v2">تنزيل النسخة الثانية</a>
+            </div>
+          </article>
+          <article class="download-card is-previous">
+            <div class="download-card-copy">
+              <span class="download-card-icon" aria-hidden="true">١</span>
+              <h3>النسخة الأولى</h3>
+              <p>يمكنك اختيار النسخة الأولى إذا كنت تفضّل الإصدار السابق. تنزيلها يبقى متاحاً إلى جانب النسخة المحسّنة.</p>
+              <div class="download-details"><span>Windows 10/11 · 64-bit</span><span>الإصدار الأول · 2026.11.3</span><span>ملف ZIP</span></div>
+            </div>
+            <div class="download-card-actions">
+              <a class="button button-outline" href="#download" data-download-zip="v1">تحميل النسخة الأولى ZIP <span aria-hidden="true">↓</span></a>
+              <a class="download-direct" href="#download" data-download-zip="v1">تنزيل النسخة الأولى</a>
+            </div>
+          </article>
         </div>
+        <p id="downloadStatus" class="download-status" role="status" aria-live="polite"></p>
+        <p class="download-extract-note">بعد استخراج ZIP، شغّل <bdi>MOKA-Warehouse-Setup.exe</bdi>. قد يعرض Windows تحذيراً لأن المثبّت غير موقّع بشهادة رقمية؛ لا تشغّل الملف إلا بعد التأكد من تنزيله من موقعك الرسمي.</p>
       </div>
     </section>
   </main>
@@ -339,36 +358,52 @@
     document.querySelector('#year').textContent = String(new Date().getFullYear());
     const downloadStatus = document.querySelector('#downloadStatus');
     const downloadButtons = [...document.querySelectorAll('[data-download-zip]')];
-    const downloadParts = Array.from({ length: 5 }, (_, index) =>
-      `accounting-software.zip.part${String(index + 1).padStart(2, '0')}`);
-    const expectedZipSize = 94751916;
+    const downloadPackages = {
+      v1: {
+        label: 'النسخة الأولى',
+        fileName: 'moka-warehouse-v1.zip',
+        partPrefix: 'accounting-software.zip',
+        partCount: 5,
+        expectedSize: 94751916
+      },
+      v2: {
+        label: 'النسخة الثانية',
+        fileName: 'moka-warehouse-v2.zip',
+        partPrefix: 'moka-warehouse-v2.zip',
+        partCount: 5,
+        expectedSize: 94756581
+      }
+    };
 
     downloadButtons.forEach(button => button.addEventListener('click', async event => {
       event.preventDefault();
       if (downloadButtons.some(item => item.getAttribute('aria-busy') === 'true')) return;
+      const download = downloadPackages[button.dataset.downloadZip];
+      if (!download) return;
       downloadButtons.forEach(item => {
         item.setAttribute('aria-busy', 'true');
         item.setAttribute('aria-disabled', 'true');
       });
       const chunks = [];
       try {
-        for (let index = 0; index < downloadParts.length; index++) {
-          downloadStatus.textContent = `جارٍ تجهيز ملف التنزيل (${index + 1} من ${downloadParts.length})...`;
-          const response = await fetch(downloadParts[index]);
+        for (let index = 0; index < download.partCount; index++) {
+          const part = `${download.partPrefix}.part${String(index + 1).padStart(2, '0')}`;
+          downloadStatus.textContent = `جارٍ تجهيز ${download.label} (${index + 1} من ${download.partCount})...`;
+          const response = await fetch(part);
           if (!response.ok) throw new Error(`Download part ${index + 1} returned HTTP ${response.status}`);
           chunks.push(await response.arrayBuffer());
         }
         const archive = new Blob(chunks, { type: 'application/zip' });
-        if (archive.size !== expectedZipSize) {
+        if (!download.expectedSize || archive.size !== download.expectedSize) {
           throw new Error(`The assembled ZIP has an unexpected size: ${archive.size}`);
         }
         const url = URL.createObjectURL(archive);
         const link = document.createElement('a');
         link.href = url;
-        link.download = 'accounting-software.zip';
+        link.download = download.fileName;
         link.click();
         window.setTimeout(() => URL.revokeObjectURL(url), 60000);
-        downloadStatus.textContent = 'اكتمل تجهيز ملف ZIP وبدأ التنزيل.';
+        downloadStatus.textContent = `اكتمل تجهيز ${download.label} وبدأ التنزيل.`;
       } catch (error) {
         console.error('Could not assemble the MOKA Warehouse ZIP download.', error);
         downloadStatus.textContent = 'تعذر تجهيز ملف التنزيل. أعد المحاولة بعد قليل.';
